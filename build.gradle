@@ -14,11 +14,17 @@ repositories {
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
     annotationProcessor("io.micronaut:micronaut-http-validation")
+    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+
     implementation("io.micronaut.serde:micronaut-serde-jackson")
+    implementation("io.swagger.core.v3:swagger-annotations")
+
     compileOnly("io.micronaut:micronaut-http-client")
     compileOnly("org.projectlombok:lombok")
+    compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("org.yaml:snakeyaml")
     testImplementation("io.micronaut:micronaut-http-client")
 }
 
@@ -30,7 +36,10 @@ java {
     sourceCompatibility = JavaVersion.toVersion("17")
     targetCompatibility = JavaVersion.toVersion("17")
 }
-
+tasks.withType(JavaCompile) {
+    options.fork = true
+    options.forkOptions.jvmArgs << '-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop'
+}
 graalvmNative.toolchainDetection = false
 micronaut {
     runtime("netty")
@@ -40,8 +49,8 @@ micronaut {
         annotations("de.jkarthaus.*")
     }
     aot {
-    // Please review carefully the optimizations enabled below
-    // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
+        // Please review carefully the optimizations enabled below
+        // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
         optimizeServiceLoading = false
         convertYamlToJava = false
         precomputeOperations = true
