@@ -20,23 +20,59 @@ public class DovetaillingService {
     public DoveTailModel buildDovetail(
             Double toolDiameter,
             Double partWidth,
-            Double partThickness) {
+            Double partThickness,
+            Integer count) throws BuildDovetailFailedException {
         actX = (double) 0;
         actY = (double) 0;
         actZ = (double) 0;
+        if (toolDiameter <= 0) {
+            throw new BuildDovetailFailedException("Tool Diameter must greater than 0");
+        }
+        if (partWidth <= (toolDiameter * 3)) {
+            throw new BuildDovetailFailedException("part width to small");
+        }
+        if (partThickness <= 1) {
+            throw new BuildDovetailFailedException("part is to thin");
+        }
+        if ((count * toolDiameter) >= partWidth) {
+            throw new BuildDovetailFailedException("to many count for width");
+        }
         return new DoveTailModel(
-                getOuterDovetail(),
-                getInnerDovetail()
+                getOuterDovetail(toolDiameter, partWidth, partThickness, count),
+                getInnerDovetail(toolDiameter, partWidth, partThickness, count)
         );
     }
 
 
-    private String getOuterDovetail() {
-        //TODO : implement
-        return null;
+    private String getOuterDovetail(
+            Double toolDiameter,
+            Double partWidth,
+            Double partThickness,
+            Integer count
+    ) throws BuildDovetailFailedException {
+        if ((count * toolDiameter) > (partWidth - 10)) {
+            throw new BuildDovetailFailedException("width to small for " + toolDiameter + " * " + count);
+        }
+        Double actY = (double) 0;
+        log.info("build outer dovetail with:{} Pockets", count);
+        String result = "(outer dovetail)\n";
+        for (int i = 0; i < count; i++) {
+            result += "(pocket )" + (i + 1) + " of " + count + ")\n";
+            result += buildPocket(toolDiameter, partWidth, partThickness, actY);
+        }
+        return result;
     }
 
-    private String getInnerDovetail() {
+    private String getInnerDovetail(
+            Double toolDiameter,
+            Double partWidth,
+            Double partThickness,
+            Integer count
+    ) throws BuildDovetailFailedException {
+        if ((count * toolDiameter) > (partWidth - 10)) {
+            throw new BuildDovetailFailedException("width to small for " + toolDiameter + " * " + count);
+        }
+
         //TODO : implement
         return null;
     }
@@ -121,4 +157,5 @@ public class DovetaillingService {
         log.debug("getWithSteps -> with={} yStep={} = {}", width, yStep, result);
         return result;
     }
+
 }

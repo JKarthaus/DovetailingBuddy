@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   sodipodi:docname="inner.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.67521728"
+     inkscape:cx="396.90927"
+     inkscape:cy="613.87647"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient6154"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6152" />
+    </linearGradient>
+    <pattern
+       inkscape:collect="always"
+       patternUnits="userSpaceOnUse"
+       width="30.066020"
+       height="5.1805778"
+       id="Wavy"
+       inkscape:stockid="Wavy"
+       inkscape:isstock="true">
+      <path
+         style="fill:black;stroke:none;"
+         d="M 7.597,0.061 C 5.079,-0.187 2.656,0.302 -0.01,1.788 L -0.01,3.061 C 2.773,1.431 5.173,1.052 7.472,1.280 C 9.770,1.508 11.969,2.361 14.253,3.218 C 18.820,4.931 23.804,6.676 30.066,3.061 L 30.062,1.788 C 23.622,5.497 19.246,3.770 14.691,2.061 C 12.413,1.207 10.115,0.311 7.597,0.061 z "
+         id="path2696" />
+    </pattern>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="114.4919 : 199.57968 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="187.12581 : 198.18219 : 1"
+       inkscape:persp3d-origin="82.125805 : 148.68219 : 1"
+       id="perspective240" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.586837;fill:url(#Wavy);stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-opacity:0.987787;fill-opacity:1.0"
+       id="rect463"
+       width="15"
+       height="15"
+       x="50.049999"
+       y="100.05" />
+    <rect
+       style="opacity:0.586837;fill:url(#Wavy);stroke:#000000;stroke-width:0.0996683;stroke-linejoin:round;stroke-opacity:0.987787;fill-opacity:1.0"
+       id="rect463-6"
+       width="14.900331"
+       height="15.000332"
+       x="80.049835"
+       y="100.04984" />
+    <rect
+       style="opacity:0.586837;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-opacity:0.987787"
+       id="rect463-3"
+       width="15"
+       height="15"
+       x="65.248512"
+       y="100.05" />
+    <rect
+       style="opacity:0.586837;fill:#000000;stroke:#000000;stroke-width:0.0754252;stroke-linejoin:round;stroke-opacity:0.987787"
+       id="rect492"
+       width="44.924576"
+       height="96.349052"
+       x="50.037712"
+       y="115.03771" />
+  </g>
+</svg>
