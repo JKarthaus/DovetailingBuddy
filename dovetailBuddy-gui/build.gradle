@@ -1,0 +1,32 @@
+plugins {
+  id 'java'
+  id "com.moowork.node" version "1.2.0"
+}
+
+node {
+  version = '18.10'
+  npmVersion = '8.19.2'
+  download = true
+}
+
+
+//jar.dependsOn 'buildAngularProd'
+
+group = "de.jkarthaus.dovetaillingBuddy"
+
+task buildAngularProd(type: Exec) {
+  commandLine 'ng build'
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+
+jar {
+  from 'dist/dovetail-buddy' into 'static'
+}
